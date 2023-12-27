@@ -17,6 +17,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+vs_code
+style-guide.md
+README-template.md
 
 npm-debug.log*
 yarn-debug.log*
