@@ -1,3 +1,17 @@
+:root {
+	/* COLORS */
+	/* Primary */
+	--color-primary-1: #ff7a7a;
+	--color-primary-2: #38cc8c;
+
+	/* Accent */
+	--color-accent: #6055a5;
+
+	/* Neutral */
+	--color-neutral-dark: #3e3c49;
+	--color-neutral-light: #b9b6d3;
+}
+
 html {
 	scroll-behavior: smooth;
 	font-size: 62.5%;
@@ -12,7 +26,57 @@ body *::before {
 }
 
 body {
-	font-family: sans-serif;
-	color: #777;
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.6rem;
 	line-height: 1;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	height: 100vh;
+	background-color: var(--color-primary-1);
+	background-image: url(../public/images/bg-intro-mobile.png);
+}
+
+.header {
+	text-align: center;
+	color: #fff;
+	width: 100%;
+	padding: 5.25em 1.5em 4em;
+}
+
+.header > .title {
+	font-size: 2.8rem;
+	font-weight: 700;
+	line-height: 1.2857;
+	letter-spacing: -0.29px;
+	margin-bottom: 0.5714em;
+}
+.header > .content {
+	line-height: 1.625;
+}
+
+.container-main {
+	text-align: center;
+	width: 100%;
+	max-width: 54rem;
+	padding: 0 2.4rem 6.8rem;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+	background-color: #fff;
+	border-radius: 1rem;
+
+	padding: 2.4rem;
+}
+
+.footer {
 }
