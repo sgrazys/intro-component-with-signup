@@ -1,5 +1,13 @@
+import Header from './Header';
+import Form from './Form';
+
 function App() {
-	return <h1>HELLO</h1>;
+	return (
+		<div className='app'>
+			<Header />
+			<Form />
+		</div>
+	);
 }
 
 export default App;
