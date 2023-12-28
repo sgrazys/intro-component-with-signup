@@ -1,13 +1,13 @@
-import PricingInfo from './PricingInfo';
+import Button from './Button';
 
-function Form() {
+function Form({ children }) {
 	return (
 		<main className='container-main'>
-			<PricingInfo />
+			{children}
 			<form className='form'>
 				<input
 					type='text'
-					placeholder='Name'
+					placeholder='First Name'
 				/>
 				<input
 					type='text'
@@ -15,14 +15,19 @@ function Form() {
 				/>
 				<input
 					type='text'
-					placeholder='Email'
+					placeholder='Email Address'
 				/>
 				<input
 					type='text'
 					placeholder='Password'
 				/>
-
-				<button className='bt'>CLAIM </button>
+				<Button
+					color={'#fff'}
+					bgColor={'#38cc8c'}
+					blackOpacity={'#00000017'}
+					fontSize={'1.5rem'}>
+					Claim you free trial
+				</Button>
 				<p className='terms'>TERMS</p>
 			</form>
 		</main>
