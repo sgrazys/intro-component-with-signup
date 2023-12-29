@@ -1,4 +1,4 @@
-function Button({ color, bgColor, blackOpacity, fontSize, children }) {
+function Button({ color, bgColor, blackOpacity, fontSize, margin, children }) {
 	const customStyle = {
 		width: '100%',
 		fontFamily: 'inherit',
@@ -12,6 +12,7 @@ function Button({ color, bgColor, blackOpacity, fontSize, children }) {
 		borderRadius: '0.3333em',
 		boxShadow: `0 -4px 0 0 ${blackOpacity} inset `,
 		cursor: 'pointer',
+		margin: margin,
 	};
 
 	return <button style={customStyle}>{children}</button>;

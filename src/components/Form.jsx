@@ -25,10 +25,13 @@ function Form({ children }) {
 					color={'#fff'}
 					bgColor={'#38cc8c'}
 					blackOpacity={'#00000017'}
-					fontSize={'1.5rem'}>
+					fontSize={'1.5rem'}
+					margin={'0 0 -0.6em 0'}>
 					Claim you free trial
 				</Button>
-				<p className='terms'>TERMS</p>
+				<p className='terms'>
+					By clicking the button, you are agreeing to our <strong>Terms and Services</strong>
+				</p>
 			</form>
 		</main>
 	);

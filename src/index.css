@@ -104,7 +104,7 @@ input[type='text'] {
 	font-family: inherit;
 	font-size: 1.4rem;
 	font-weight: 600;
-	color: var(--color-neutral-dark);
+	color: #000;
 	opacity: 0.75;
 	padding-left: 1.2666em;
 	border: solid 1px #dedede;
@@ -113,12 +113,22 @@ input[type='text'] {
 }
 
 input::placeholder {
-	color: rgba(62, 60, 73, 0.65);
+	color: var(--color-neutral-dark);
 }
 
 input[type='text']:focus {
 	border: solid 1px var(--color-accent);
 	caret-color: var(--color-accent);
+}
+
+.terms {
+	font-size: 1.1rem;
+	line-height: 1.909em;
+	color: var(--color-neutral-light);
+}
+
+.terms > strong {
+	color: var(--color-primary-1);
 }
 
 .footer {
