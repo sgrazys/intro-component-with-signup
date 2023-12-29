@@ -10,7 +10,6 @@ function App() {
 			<Form>
 				<PricingInfo />
 			</Form>
-			<Footer />
 		</div>
 	);
 }

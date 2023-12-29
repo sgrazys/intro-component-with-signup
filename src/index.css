@@ -135,3 +135,32 @@ input[type='text']:focus {
 	font-size: 1.2rem;
 	padding-bottom: 2em;
 }
+
+@media (min-width: 64em) {
+	.app {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 4.5rem;
+		background-image: url(../public/images/bg-intro-desktop.png);
+	}
+
+	.header {
+		text-align: left;
+		padding: 0 1rem 0;
+	}
+	.header > .title {
+		font-size: 5rem;
+		line-height: 1.1;
+		letter-spacing: -0.52px;
+		margin-bottom: 0.5714em;
+	}
+
+	.header > .content {
+		line-height: 1.625;
+	}
+
+	.container-main {
+		padding: 0;
+	}
+}
