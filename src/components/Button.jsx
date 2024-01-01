@@ -1,21 +1,5 @@
-function Button({ color, bgColor, blackOpacity, fontSize, margin, children }) {
-	const customStyle = {
-		width: '100%',
-		fontFamily: 'inherit',
-		fontWeight: '600',
-		fontSize: fontSize,
-		textTransform: 'uppercase',
-		color: color,
-		backgroundColor: bgColor,
-		padding: '1em 0',
-		border: 'none',
-		borderRadius: '0.3333em',
-		boxShadow: `0 -4px 0 0 ${blackOpacity} inset `,
-		cursor: 'pointer',
-		margin: margin,
-	};
-
-	return <button style={customStyle}>{children}</button>;
+function Button({ children }) {
+	return <button className='form-btn'>{children}</button>;
 }
 
 export default Button;
