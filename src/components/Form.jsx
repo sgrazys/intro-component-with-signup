@@ -9,18 +9,18 @@ function Form() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const [isValidFName, setIsValidFName] = useState(true);
-	const [isValidLName, setIsValidLName] = useState(true);
-	const [isValidEmail, setIsValidEmail] = useState(true);
-	const [isValidPassword, setIsValidPassword] = useState(true);
+	const [showFNameErr, setShowFNameErr] = useState(false);
+	const [showLNameErr, setShowLNameErr] = useState(false);
+	const [showEmailErr, setShowEmailErr] = useState(false);
+	const [showPasswordErr, setShowPasswordErr] = useState(false);
 
 	function resetValidationState(val, validationState, setter) {
-		if (val && !validationState) setter(true);
+		if (val && validationState) setter(false);
 	}
 
 	function isNotEmptyInput(val, setter) {
 		if (val.trim() === '') {
-			setter(false);
+			setter(true);
 			return;
 		}
 	}
@@ -28,9 +28,9 @@ function Form() {
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		isNotEmptyInput(fName, setIsValidFName);
-		isNotEmptyInput(lName, setIsValidLName);
-		isNotEmptyInput(password, setIsValidPassword);
+		isNotEmptyInput(fName, setShowFNameErr);
+		isNotEmptyInput(lName, setShowLNameErr);
+		isNotEmptyInput(password, setShowPasswordErr);
 
 		const emailArr = email?.split('');
 		const domain = email.slice('@');
@@ -38,7 +38,7 @@ function Form() {
 		const emailUserName = email.slice(0, email.indexOf('@'));
 
 		if (!email.includes('@') || email.trim() === '' || !domain.includes('.') || emailArr.some((char) => invalidSymbols.includes(char)) || emailUserName.trim() === '') {
-			setIsValidEmail(false);
+			setShowEmailErr(true);
 			return;
 		}
 
@@ -53,25 +53,25 @@ function Form() {
 	function handleFName(e) {
 		e.preventDefault();
 		setFName(e.target.value);
-		resetValidationState(fName, isValidFName, setIsValidFName);
+		resetValidationState(fName, showFNameErr, setShowFNameErr);
 	}
 
 	function handlelName(e) {
 		e.preventDefault();
 		setLName(e.target.value);
-		resetValidationState(lName, isValidLName, setIsValidLName);
+		resetValidationState(lName, showLNameErr, setShowLNameErr);
 	}
 
 	function handlePassword(e) {
 		e.preventDefault();
 		setPassword(e.target.value);
-		resetValidationState(password, isValidPassword, setIsValidPassword);
+		resetValidationState(password, showPasswordErr, setShowPasswordErr);
 	}
 
 	function handleEmail(e) {
 		e.preventDefault();
 		setEmail(e.target.value);
-		resetValidationState(email, isValidEmail, setIsValidEmail);
+		resetValidationState(email, showEmailErr, setShowEmailErr);
 	}
 
 	return (
@@ -86,7 +86,7 @@ function Form() {
 					type={'text'}
 					placeholder={'First Name'}
 					errMsg={'First Name cannot be empty'}
-					isValid={isValidFName}
+					showErr={showFNameErr}
 				/>
 				<Input
 					onChange={handlelName}
@@ -94,7 +94,7 @@ function Form() {
 					type={'text'}
 					placeholder={'Last Name'}
 					errMsg={'Last Name cannot be empty'}
-					isValid={isValidLName}
+					showErr={showLNameErr}
 				/>
 				<Input
 					onChange={handleEmail}
@@ -102,7 +102,7 @@ function Form() {
 					type={'text'}
 					placeholder={'Email address'}
 					errMsg={'Looks like this is not an email'}
-					isValid={isValidEmail}
+					showErr={showEmailErr}
 				/>
 				<Input
 					onChange={handlePassword}
@@ -110,7 +110,7 @@ function Form() {
 					type={'password'}
 					placeholder={'Password'}
 					errMsg={'Password cannot be empty'}
-					isValid={isValidPassword}
+					showErr={showPasswordErr}
 				/>
 
 				<Button>Claim you free trial</Button>
