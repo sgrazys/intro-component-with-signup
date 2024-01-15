@@ -78,6 +78,8 @@ function Form() {
 		<main className='container-main'>
 			<PricingInfo />
 			<form
+				name='sign-up'
+				netlify
 				className='form'
 				onSubmit={handleSubmit}>
 				<Input
