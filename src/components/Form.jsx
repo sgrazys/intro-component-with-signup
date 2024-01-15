@@ -79,6 +79,7 @@ function Form() {
 			<PricingInfo />
 			<form
 				name='sign-up'
+				method='POST'
 				netlify
 				className='form'
 				onSubmit={handleSubmit}>
