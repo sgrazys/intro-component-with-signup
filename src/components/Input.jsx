@@ -1,6 +1,6 @@
 import Icon from './Icon';
 
-function Input({ value, type, placeholder, errMsg, showErr, onChange }) {
+function Input({ value, type, placeholder, errMsg, showErr, name, onChange }) {
 	return (
 		<div className='input-container'>
 			<div className='input-row'>
@@ -9,6 +9,7 @@ function Input({ value, type, placeholder, errMsg, showErr, onChange }) {
 					value={value}
 					type={type}
 					placeholder={placeholder}
+					name={name}
 				/>
 
 				{showErr && <Icon />}

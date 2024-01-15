@@ -79,7 +79,8 @@ function Form() {
 			<PricingInfo />
 			<form
 				name='sign-up'
-				netlify
+				method='POST'
+				data-netlify='true'
 				className='form'
 				onSubmit={handleSubmit}>
 				<Input
@@ -89,6 +90,7 @@ function Form() {
 					placeholder={'First Name'}
 					errMsg={'First Name cannot be empty'}
 					showErr={showFNameErr}
+					name={'Name'}
 				/>
 				<Input
 					onChange={handlelName}
@@ -97,6 +99,7 @@ function Form() {
 					placeholder={'Last Name'}
 					errMsg={'Last Name cannot be empty'}
 					showErr={showLNameErr}
+					name={'Last name'}
 				/>
 				<Input
 					onChange={handleEmail}
@@ -105,6 +108,7 @@ function Form() {
 					placeholder={'Email address'}
 					errMsg={'Looks like this is not an email'}
 					showErr={showEmailErr}
+					name={'email'}
 				/>
 				<Input
 					onChange={handlePassword}
@@ -113,6 +117,7 @@ function Form() {
 					placeholder={'Password'}
 					errMsg={'Password cannot be empty'}
 					showErr={showPasswordErr}
+					name={'password'}
 				/>
 
 				<Button>Claim you free trial</Button>
